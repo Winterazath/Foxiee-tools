@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foxie Tools - Free Fire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Foxie Tools</h1>
+            <p class="subtitle">Crosshair & Auto DPI</p>
+            
+            <div class="version-bar">
+                <span id="version-text" class="version free">Versi Free</span>
+                <button id="btn-verify" class="verify-btn">Verifikasi Premium</button>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="crosshair">Crosshair</button>
+            <button class="tab-btn" data-tab="dpi">Auto DPI</button>
+        </div>
+
+        <!-- Tab Crosshair -->
+        <div id="crosshair" class="tab-content active">
+            <div class="card">
+                <h2>Custom Crosshair</h2>
+                <div class="preview">
+                    <div id="crosshair-preview" class="crosshair-preview">
+                        <div class="crosshair-line horizontal"></div>
+                        <div class="crosshair-line vertical"></div>
+                        <div class="crosshair-dot"></div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <label>Warna:</label>
+                    <input type="color" id="color-picker" value="#00bfff">
+                    <label>Ukuran:</label>
+                    <input type="range" id="size-slider" min="10" max="100" value="40">
+                    <label>Opacity:</label>
+                    <input type="range" id="opacity-slider" min="0.1" max="1" step="0.1" value="0.85">
+                    <label>Gaya:</label>
+                    <select id="style-select">
+                        <option value="default">Default (+)</option>
+                        <option value="dot">Dot Only</option>
+                        <option value="circle">Circle</option>
+                    </select>
+                    <button id="btn-apply-crosshair" class="btn primary">Terapkan Crosshair</button>
+                    <button id="btn-hide-crosshair" class="btn secondary">Sembunyikan</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Auto DPI -->
+        <div id="dpi" class="tab-content">
+            <div class="card">
+                <h2>Auto DPI Changer <span id="shizuku-status" class="status-lock">🔒</span></h2>
+                <p class="note">* Membutuhkan Shizuku aktif</p>
+                
+                <div id="shizuku-warning" class="warning-box">
+                    <span class="lock-icon">🔒</span>
+                    <p><strong>Shizuku belum aktif!</strong><br>
+                    Aktifkan Shizuku terlebih dahulu untuk menggunakan fitur ini.</p>
+                </div>
+
+                <div id="dpi-content" class="hidden">
+                    <div class="preset-grid">
+                        <div class="preset" data-dpi="320">Default (320)</div>
+                        <div class="preset" data-dpi="400">Smooth (400)</div>
+                        <div class="preset" data-dpi="600">Headshot (600)</div>
+                        <div class="preset" data-dpi="800">Ultra (800)</div>
+                    </div>
+
+                    <div class="custom-dpi">
+                        <label>DPI Custom (300 - 1000):</label>
+                        <input type="number" id="custom-dpi" value="600" min="300" max="1000">
+                        <button id="btn-apply-dpi" class="btn primary">Terapkan DPI</button>
+                    </div>
+
+                    <div id="dpi-error" class="error-message hidden">
+                        Ditolak! Masukkan DPI antara 300 - 1000
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Foxie Tools © 2026 • Gunakan dengan bijak</p>
+            <small>Risiko ban akun Free Fire ada pada pengguna</small>
+        </footer>
+    </div>
+
+    <!-- Modal Verifikasi -->
+    <div id="verify-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Verifikasi Premium</h2>
+            <p>Masukkan kode dari Admin/Owner</p>
+            <input type="text" id="verify-code" placeholder="Masukkan kode" maxlength="30">
+            <button id="btn-submit-code" class="btn primary">Verifikasi</button>
+            <button id="btn-cancel" class="btn secondary">Batal</button>
+            <p class="small">Kode hanya berlaku untuk 1 device</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
